@@ -5,6 +5,7 @@
 !/.gitignore
 access.log
 core
+/node
 error.log
 *.tar.gz
 *.error

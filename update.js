@@ -39,7 +39,7 @@ var client = new bot('.node-bot.config.json'),
 	updateBot;
 
 updateBot = {
-	version: '0.0.0.1',
+	version: '0.0.0.2',
 	config: {},
 	uploadCountCache: {},
 	nextMode: function() {
@@ -231,7 +231,7 @@ updateBot = {
 				
 				console.log('And ' + username + ' has uploaded ' + uploadCount + ' files that are alive.');
 				
-				client.edit(pgName, currentMode.template + '<onlyinclude>' + uploadCount + '</onlyinclude>', 'Bot: Updating upload statistics. Bot version:' + updater.version, function() {
+				client.edit(pgName, currentMode.template + '<onlyinclude>' + uploadCount + '</onlyinclude>', 'Bot: Updating statistics. New value:' + uploadCount + '. Bot version:' + updater.version, function() {
 					updater.pendingEdits--;
 					console.log('Editing ' + pgName + ': Okay.');
 					updater.maybeExit();

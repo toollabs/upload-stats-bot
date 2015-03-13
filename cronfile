@@ -1,3 +1,4 @@
 PATH=/usr/local/bin:/usr/bin:/bin:$HOME/node/bin:$PATH
 MAILTO=rillke@wikipedia.de
 20 3 * * * jsub -once -mem 1200m -N production node/bin/node update.js
+21 17 * * 6 jsub -once -mem 1200m -N share node/bin/node marketshare.js

@@ -17,6 +17,9 @@ var client = new bot('.node-bot.config.json'),
 	}, {
 		name: 'Videoconvert upload from toollabs',
 		signature: '_ideoconvert % toollabs'
+	}, {
+		name: 'GLAM wiki toolset',
+		signature: '%GWToolset%'
 	}],
 	updateBot;
 

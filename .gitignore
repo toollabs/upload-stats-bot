@@ -13,7 +13,8 @@ error.log
 *.out
 *.gitignore
 replica.my.cnf
-
+service.log
+service.manifest
 
 # C++ objects and libs
 
@@ -43,3 +44,4 @@ Makefile*
 # QtCreator
 
 *.autosave
+

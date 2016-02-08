@@ -20,6 +20,9 @@ var client = new bot('.node-bot.config.json'),
 	}, {
 		name: 'GLAM wiki toolset',
 		signature: '%GWToolset%'
+	}, {
+		name: 'video2commons',
+		signature: 'Imported media from %'
 	}],
 	updateBot;
 

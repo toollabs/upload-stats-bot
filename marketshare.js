@@ -59,7 +59,8 @@ updateBot = {
 					// would create a lot of different tokens due to replecation lag.
 					setTimeout(function() {
 						client.api.call({
-							action: 'tokens'
+							action: 'query',
+							meta: 'tokens'
 						}, function(r) {
 							setTimeout(function() {
 								updater.nextTool();
@@ -153,8 +154,16 @@ updateBot = {
 	},
 	logOut: function( callback ) {
 		client.api.call({
-			action: 'logout'
-		}, callback || function(){}, 'POST');
+			action: 'query',
+			meta: 'tokens'
+		}, function(r) {
+			console.log('Got a token');
+			console.log('Token: ' + r.tokens.csrftoken);
+			client.api.call({
+				action: 'logout',
+				token: r.tokens.csrftoken
+			}, callback || function(){}, 'POST');
+		});
 	},
 	getShare: function( toolSignature, callback ) {
 		console.log('Running SQL query.');

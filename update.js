@@ -79,7 +79,7 @@ updateBot = {
 		setTimeout(function() {
 			updater.logOut();
 			process.exit(1);
-		}, 180000);
+		}, 43200000);
 	},
 	pages: [],
 	pendigPages: 0,

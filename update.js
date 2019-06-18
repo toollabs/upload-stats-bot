@@ -10,7 +10,7 @@ var client = new bot('.node-bot.config.json'),
 			regexp: /\{\{\s*(?:[Tt]emplate\:)?[Uu]ploadStats\/alive\s*\}\}/,
 			template: '{{UploadStats/alive}}',
 			queries: [
-				'SELECT count(*) AS count FROM image INNER JOIN actor ON img_actor = actor_id WHERE actor_name=? ORDER BY img_timestamp DESC;'
+				'SELECT count(*) AS count FROM image INNER JOIN actor_image ON img_actor = actor_id WHERE actor_name=? ORDER BY img_timestamp DESC;'
 			]
 		}, {
 			cat: 'Pages to be updated by UploadStatsBot - all alive',

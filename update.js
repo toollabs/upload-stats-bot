@@ -17,15 +17,15 @@ var client = new bot('.node-bot.config.json'),
 			regexp: /\{\{\s*(?:[Tt]emplate\:)?[Uu]ploadStats\/all[ _]alive\s*\}\}/,
 			template: '{{UploadStats/all alive}}',
 			queries: [
-				'SELECT count(*) AS count FROM image INNER JOIN actor ON img_actor = actor_id WHERE actor_name=? ORDER BY img_timestamp DESC;',
-				'SELECT count(*) AS count FROM oldimage INNER JOIN actor ON oi_actor = actor_id WHERE actor_name=? ORDER BY oi_timestamp DESC;'
+				'SELECT count(*) AS count FROM image INNER JOIN actor_image ON img_actor = actor_id WHERE actor_name=? ORDER BY img_timestamp DESC;',
+				'SELECT count(*) AS count FROM oldimage INNER JOIN actor_oldimage ON oi_actor = actor_id WHERE actor_name=? ORDER BY oi_timestamp DESC;'
 			]
 		}, {
 			cat: 'Pages to be updated by UploadStatsBot - deleted',
 			regexp: /\{\{\s*(?:[Tt]emplate\:)?[Uu]ploadStats\/deleted\s*\}\}/,
 			template: '{{UploadStats/deleted}}',
 			queries: [
-				'SELECT count(*) AS count FROM filearchive INNER JOIN actor ON fa_actor = actor_id WHERE actor_name=? ORDER BY fa_timestamp DESC;'
+				'SELECT count(*) AS count FROM filearchive INNER JOIN actor_filearchive ON fa_actor = actor_id WHERE actor_name=? ORDER BY fa_timestamp DESC;'
 			]
 		}, {
 			cat: 'Pages to be updated by UploadStatsBot - edits',
